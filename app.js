@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!calcRoom || !totalNakliyatPrice) return;
 
         const baseOption = calcRoom.options[calcRoom.selectedIndex];
-        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 3999;
+        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 15000;
 
         let districtFee = 0;
         const distVal = calcDistrict?.value || 'muratpasa';
