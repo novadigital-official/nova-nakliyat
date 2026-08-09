@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const finalPrice = totalNakliyatPrice.textContent;
 
             const message = `Merhaba Nova Nakliyat, web siteniz üzerinden ulaştım. Antalya içi asansörlü evden eve nakliyat için aşağıdaki detaylar doğrultusunda ${finalPrice}'lik en uygun paket teklifini dondurmak istiyorum:\n\n🏠 Ev Tipi: ${roomText}\n📍 Güzergah: ${distText}\n🛗 Asansör: ${elevText}\n💰 Net Fiyat: ${finalPrice}`;
-            const waUrl = `https://wa.me/905300000000?text=${encodeURIComponent(message)}`;
+            const waUrl = `https://wa.me/905070871789?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank');
         });
