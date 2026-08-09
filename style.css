@@ -258,3 +258,78 @@ ul { list-style: none; }
     .mobile-sticky-bar { display: flex; }
     body { padding-bottom: 65px; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE OVERFLOW & RESPONSIVE PERFECTION FIX
+   ═══════════════════════════════════════════════════════════ */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box !important;
+}
+
+img, video, iframe, svg, form, select, input, button, table {
+    max-width: 100% !important;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .hero-h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.25 !important;
+        word-break: break-word;
+    }
+
+    .top-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+
+    .announce-txt {
+        font-size: 0.8rem;
+    }
+
+    .hero-cta-box {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-xl {
+        width: 100% !important;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .pricing-grid, .visual-grid, .pack-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .pack-box, .visual-card, .hero-calc-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .proof-list {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .proof-chip {
+        width: 100%;
+        text-align: left;
+    }
+}
