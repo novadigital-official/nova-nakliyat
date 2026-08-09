@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   NOVA NAKLİYAT - INTERACTIVE LOGIC (ANTALYA)
-   ═══════════════════════════════════════════════════════════ */
+/* NOVA NAKLİYAT - INTERACTIVE LOGIC (ANTALYA) */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -14,19 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!calcRoom || !totalNakliyatPrice) return;
 
         const baseOption = calcRoom.options[calcRoom.selectedIndex];
-        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 4999;
+        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 3999;
 
         let districtFee = 0;
         const distVal = calcDistrict?.value || 'muratpasa';
-        if (distVal === 'dosemealti') districtFee = 1000;
-        else if (distVal === 'serik-belek') districtFee = 1500;
-        else if (distVal === 'kemer') districtFee = 2000;
-        else if (distVal === 'alanya') districtFee = 3500;
+        if (distVal === 'dosemealti') districtFee = 800;
+        else if (distVal === 'serik-belek') districtFee = 1200;
+        else if (distVal === 'kemer') districtFee = 1500;
+        else if (distVal === 'alanya') districtFee = 2500;
 
         let elevatorFee = 0;
         const elevVal = calcElevator?.value || 'cift';
-        if (elevVal === 'cift') elevatorFee = 1000;
-        else if (elevVal === 'bina') elevatorFee = -500;
+        if (elevVal === 'cift') elevatorFee = 800;
+        else if (elevVal === 'bina') elevatorFee = -400;
 
         const totalPrice = basePrice + districtFee + elevatorFee;
         totalNakliyatPrice.textContent = `${totalPrice.toLocaleString('tr-TR')} TL`;
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const elevText = calcElevator.options[calcElevator.selectedIndex].text;
             const finalPrice = totalNakliyatPrice.textContent;
 
-            const message = `Merhaba Nova Nakliyat, web siteniz üzerinden ulaştım. Antalya içi asansörlü evden eve nakliyat için aşağıdaki detaylar doğrultusunda ${finalPrice}'lik paket teklifini dondurmak istiyorum:\n\n🏠 Ev Tipi: ${roomText}\n📍 Güzergah: ${distText}\n🛗 Asansör: ${elevText}\n💰 Net Fiyat: ${finalPrice}`;
+            const message = `Merhaba Nova Nakliyat, web siteniz üzerinden ulaştım. Antalya içi asansörlü evden eve nakliyat için aşağıdaki detaylar doğrultusunda ${finalPrice}'lik en uygun paket teklifini dondurmak istiyorum:\n\n🏠 Ev Tipi: ${roomText}\n📍 Güzergah: ${distText}\n🛗 Asansör: ${elevText}\n💰 Net Fiyat: ${finalPrice}`;
             const waUrl = `https://wa.me/905300000000?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank');
