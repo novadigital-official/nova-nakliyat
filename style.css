@@ -5,9 +5,10 @@
 
 :root {
     --color-dark: #0F172A;
-    --color-primary: #2563EB;
-    --color-primary-hover: #1D4ED8;
-    --color-primary-light: #EFF6FF;
+    --color-primary: #DC2626;        /* Dikkat Çekici Canlı Kırmızı (Action Logistics Red) */
+    --color-primary-hover: #B91C1C;  /* Koyu Kırmızı Hover */
+    --color-primary-light: #FEF2F2;  /* Hafif Kırmızı Zemin */
+    --color-accent-amber: #F59E0B;   /* Asansör / Yıldız Sarı */
     --color-bg-light: #F8FAFC;
     --color-border: #E2E8F0;
     --color-text-main: #1E293B;
@@ -18,6 +19,7 @@
     --radius-md: 12px;
     --radius-lg: 16px;
     --shadow-soft: 0 4px 20px rgba(15, 23, 42, 0.05);
+    --shadow-red: 0 4px 16px rgba(220, 38, 38, 0.28);
 }
 
 /* 0. GLOBAL RESET & ZERO-OVERFLOW GUARANTEE */
@@ -161,12 +163,12 @@ ul { list-style: none; }
 }
 .btn-call-nav { background: var(--color-dark); color: var(--color-white); }
 .btn-call-nav:hover { background: #1E293B; }
-.btn-wa-nav { background: var(--color-primary); color: var(--color-white); }
+.btn-wa-nav { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-red); }
 .btn-wa-nav:hover { background: var(--color-primary-hover); }
 
 .btn-call-hero { background: var(--color-dark); color: var(--color-white); border: 1px solid rgba(255,255,255,0.2); }
 .btn-call-hero:hover { background: #1E293B; }
-.btn-wa-hero { background: var(--color-primary); color: var(--color-white); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); }
+.btn-wa-hero { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-red); }
 .btn-wa-hero:hover { background: var(--color-primary-hover); }
 .btn-xl { padding: 10px 18px; font-size: 0.9rem; }
 .btn-block { width: 100%; }
@@ -196,7 +198,7 @@ ul { list-style: none; }
     margin-bottom: 12px;
     max-width: 100%;
 }
-.rating-badge .stars { color: #60A5FA; }
+.rating-badge .stars { color: #F59E0B; }
 .hero-h1 {
     font-size: clamp(1.5rem, 3vw, 2.3rem);
     font-weight: 900;
@@ -205,7 +207,7 @@ ul { list-style: none; }
     color: var(--color-white);
     letter-spacing: -0.5px;
 }
-.hero-h1 .cyan { color: #60A5FA; }
+.hero-h1 .cyan { color: #F87171; }
 .hero-desc {
     font-size: 0.9rem;
     color: #94A3B8;
@@ -235,7 +237,7 @@ ul { list-style: none; }
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.proof-chip i { color: #60A5FA; font-size: 0.85rem; flex-shrink: 0; }
+.proof-chip i { color: #F87171; font-size: 0.85rem; flex-shrink: 0; }
 
 .hero-cta-box { display: flex; gap: 10px; flex-wrap: wrap; }
 
@@ -288,13 +290,13 @@ ul { list-style: none; }
 
 .price-output-box {
     background: var(--color-primary-light);
-    border: 1px dashed #BFDBFE;
+    border: 1px dashed #FECACA;
     border-radius: var(--radius-sm);
     padding: 10px;
     text-align: center;
     margin-top: 2px;
 }
-.out-title { font-size: 0.7rem; font-weight: 700; color: #1E40AF; text-transform: uppercase; }
+.out-title { font-size: 0.7rem; font-weight: 700; color: #991B1B; text-transform: uppercase; }
 .out-amount {
     font-family: 'IBM Plex Mono', 'Space Grotesk', monospace;
     font-size: 1.55rem;
@@ -304,13 +306,14 @@ ul { list-style: none; }
     margin: 2px 0;
     letter-spacing: -0.02em;
 }
-.out-sub { font-size: 0.7rem; color: #1E40AF; font-weight: 600; }
+.out-sub { font-size: 0.7rem; color: #991B1B; font-weight: 600; }
 .btn-success-calc {
     background: var(--color-primary);
     color: var(--color-white);
     padding: 10px;
     font-size: 0.9rem;
     border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-red);
 }
 .btn-success-calc:hover { background: var(--color-primary-hover); }
 
@@ -409,7 +412,7 @@ ul { list-style: none; }
     transition: transform 0.2s;
 }
 .pack-box:hover { transform: translateY(-3px); }
-.pack-box.popular { border-color: var(--color-primary); box-shadow: 0 6px 20px rgba(37,99,235,0.12); }
+.pack-box.popular { border-color: var(--color-primary); box-shadow: var(--shadow-red); }
 .pop-ribbon {
     position: absolute;
     top: -12px;
