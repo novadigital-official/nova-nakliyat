@@ -171,9 +171,9 @@ ul { list-style: none; }
 /* HERO */
 .hero-clean {
     background: var(--color-hero-bg);
-    color: var(--color-white);
-    padding: 38px 0 46px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #FFFFFF;
+    padding: 40px 0 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 .hero-grid {
     display: grid;
@@ -182,52 +182,61 @@ ul { list-style: none; }
     align-items: center;
 }
 .hero-eyebrow {
-    font-size: 0.74rem;
+    font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #FECDD3;
+    color: #FFFFFF !important;
+    opacity: 0.95;
     margin-bottom: 10px;
 }
 .hero-h1 {
-    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
     font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 12px;
-    color: var(--color-white);
+    line-height: 1.25;
+    margin-bottom: 14px;
+    color: #FFFFFF !important;
     letter-spacing: -0.03em;
 }
-.hero-h1 .hero-accent { color: #FECDD3; }
-.hero-desc {
-    font-size: 0.92rem;
-    color: #FFE4E6;
-    margin-bottom: 18px;
-    line-height: 1.58;
-    max-width: 520px;
+.hero-h1 .hero-accent {
+    color: #FFFFFF !important;
+    display: inline-block;
+    border-bottom: 3px solid var(--color-primary);
 }
-.hero-desc strong { color: var(--color-white); }
+.hero-desc {
+    font-size: 0.95rem;
+    color: #FFFFFF !important;
+    opacity: 0.95;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 540px;
+}
+.hero-desc strong {
+    color: #FFFFFF !important;
+    font-weight: 800;
+}
 
 .proof-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 22px;
 }
 .proof-chip {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
-    padding: 7px 10px;
+    background: rgba(255,255,255,0.16) !important;
+    border: 1px solid rgba(255,255,255,0.28) !important;
+    padding: 8px 12px;
     border-radius: var(--radius-sm);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.proof-chip i { color: #FECDD3; font-size: 0.85rem; flex-shrink: 0; }
+.proof-chip i { color: #FFFFFF; font-size: 0.85rem; flex-shrink: 0; }
 
 .hero-cta-box { display: flex; gap: 10px; flex-wrap: wrap; }
 
