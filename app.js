@@ -36,14 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateNakliyatPrice();
 
-    if (btnLockNakliyatPrice) {
-        btnLockNakliyatPrice.addEventListener('click', () => {
-            const roomText = calcRoom.options[calcRoom.selectedIndex].text;
-            const distText = calcDistrict.options[calcDistrict.selectedIndex].text;
-            const elevText = calcElevator.options[calcElevator.selectedIndex].text;
-            const finalPrice = totalNakliyatPrice.textContent;
+    const btnAction = document.getElementById('btnCalculateNakliyat') || document.getElementById('btnLockNakliyatPrice');
 
-            const message = `Merhaba, AntalyadaNakliyat.com.tr üzerinden ulaştım. Antalya içi asansörlü evden eve nakliyat için aşağıdaki detaylar doğrultusunda ${finalPrice}'lik en uygun paket teklifini almak istiyorum:\n\n• Paket Tipi: ${roomText}\n• Güzergah: ${distText}\n• Asansör Durumu: ${elevText}\n• Fiyat Aralığı: ${finalPrice}`;
+    if (btnAction) {
+        btnAction.addEventListener('click', () => {
+            const roomText = calcRoom ? calcRoom.options[calcRoom.selectedIndex].text : 'Standart Ev Taşıma';
+            const distText = calcDistrict ? calcDistrict.options[calcDistrict.selectedIndex].text : 'Muratpaşa';
+            const finalPrice = totalNakliyatPrice ? totalNakliyatPrice.textContent : '₺15.000';
+
+            const message = `Merhaba, AntalyadaNakliyat.com.tr üzerinden ulaştım. Antalya içi asansörlü evden eve nakliyat için aşağıdaki detaylar doğrultusunda ${finalPrice}'lik paket teklifini almak istiyorum:\n\n• Paket Tipi: ${roomText}\n• Güzergah: ${distText}\n• Fiyat Aralığı: ${finalPrice}`;
             const waUrl = `https://wa.me/905070871789?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank');
