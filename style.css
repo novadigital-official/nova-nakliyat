@@ -72,10 +72,10 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     color: var(--color-charcoal);
     letter-spacing: -0.025em;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 a {
@@ -123,7 +123,7 @@ img {
     display: inline-block;
     background: var(--color-sand-light);
     color: var(--color-sand-badge);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 0.74rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -176,7 +176,7 @@ img {
 .notice-badge {
     background: var(--color-amber);
     color: #FFFFFF;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-weight: 800;
     font-size: 0.68rem;
     padding: 2px 6px;
@@ -254,7 +254,7 @@ img {
 }
 
 .brand-name {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 1.08rem;
     font-weight: 800;
     color: var(--color-charcoal);
@@ -282,7 +282,7 @@ img {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-weight: 700;
     border-radius: var(--radius-md);
     cursor: pointer;
@@ -512,7 +512,7 @@ img {
 
 .calc-tag {
     display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 0.68rem;
     font-weight: 800;
     color: var(--color-amber);
