@@ -36,15 +36,15 @@ html, body {
 }
 
 body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     color: var(--color-text-main);
     background-color: var(--color-bg-light);
-    line-height: 1.5;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
 }
 
-h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; color: var(--color-dark); }
+h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; color: var(--color-dark); letter-spacing: -0.02em; }
 a { text-decoration: none; color: inherit; transition: all 0.15s; }
 ul { list-style: none; }
 
@@ -296,12 +296,13 @@ ul { list-style: none; }
 }
 .out-title { font-size: 0.7rem; font-weight: 700; color: #1E40AF; text-transform: uppercase; }
 .out-amount {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 900;
+    font-family: 'IBM Plex Mono', 'Space Grotesk', monospace;
+    font-size: 1.55rem;
+    font-weight: 700;
     color: var(--color-primary);
     line-height: 1.1;
     margin: 2px 0;
+    letter-spacing: -0.02em;
 }
 .out-sub { font-size: 0.7rem; color: #1E40AF; font-weight: 600; }
 .btn-success-calc {
@@ -427,11 +428,12 @@ ul { list-style: none; }
 .pack-top h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 4px; }
 .pack-top p { font-size: 0.78rem; color: var(--color-text-muted); margin-bottom: 12px; }
 .pack-price {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'IBM Plex Mono', 'Space Grotesk', monospace;
     font-size: 1.65rem;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--color-dark);
     margin-bottom: 14px;
+    letter-spacing: -0.02em;
 }
 .pack-price span { font-size: 0.82rem; color: var(--color-primary); }
 
