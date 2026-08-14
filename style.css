@@ -291,21 +291,31 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-    body { padding-bottom: 70px !important; }
-    .top-announcement { font-size: 0.72rem; padding: 6px 0; }
-    .top-flex { flex-direction: column; text-align: center; gap: 2px; }
-    .site-header { padding: 8px 0; }
+    body { padding-bottom: calc(65px + env(safe-area-inset-bottom, 0px)) !important; }
+    .top-announcement { font-size: 0.7rem; padding: 5px 0; }
+    .top-flex { justify-content: center; }
+    .top-flex .phone-link { display: none; }
+    .site-header { padding: 6px 0; }
     .header-actions .btn-call-nav { display: none !important; }
-    .header-actions .btn-wa-nav { padding: 8px 14px; font-size: 0.8rem; min-height: 36px; }
-    .brand-name { font-size: 1.05rem; }
-    .hero-clean { padding: 24px 0 32px; }
-    .hero-h1 { font-size: 1.65rem !important; line-height: 1.22 !important; }
-    .hero-desc { font-size: 0.86rem; margin-bottom: 14px; }
-    .proof-list { grid-template-columns: 1fr 1fr !important; gap: 6px !important; margin-bottom: 16px; }
-    .proof-chip { padding: 6px 8px; font-size: 0.74rem; }
+    .header-actions .btn-wa-nav { padding: 6px 12px; font-size: 0.78rem; min-height: 34px; }
+    .logo-icon { width: 30px; height: 30px; font-size: 0.85rem; }
+    .brand-name { font-size: 0.95rem; }
+    .brand-sub { font-size: 0.62rem; }
+    .hero-clean { padding: 20px 0 28px; }
+    .hero-h1 { font-size: 1.45rem !important; line-height: 1.2 !important; }
+    .hero-desc { font-size: 0.82rem; margin-bottom: 14px; }
     .hero-cta-box { display: none; }
-    .hero-calc-wrapper { padding: 16px; }
+    .hero-calc-wrapper { padding: 15px; }
     .visual-grid, .pack-grid { grid-template-columns: 1fr !important; }
     .mobile-sticky-bar { display: flex; }
+}
+
+@media (max-width: 400px) {
+    .container { padding: 0 12px; }
+    .proof-list { grid-template-columns: 1fr !important; gap: 6px !important; }
+    .proof-chip { padding: 6px 8px; font-size: 0.74rem; }
+    .brand-name { font-size: 0.88rem; }
+    .header-actions .btn-wa-nav { padding: 5px 10px; font-size: 0.74rem; }
+    .top-announcement { font-size: 0.65rem; }
 }
 
