@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const calcRoom = document.getElementById('calcRoom');
     const calcElevator = document.getElementById('calcElevator');
     const calcDistrict = document.getElementById('calcDistrict');
+    const calcName = document.getElementById('calcName');
+    const calcPhone = document.getElementById('calcPhone');
     const totalNakliyatPrice = document.getElementById('totalNakliyatPrice');
     const calcBreakdownNote = document.getElementById('calcBreakdownNote');
 
@@ -18,10 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Oda baz fiyatı (Usta maliyeti + Bizim Kârımız: 1+1=17k, 2+1=21k, 3+1=25k, 4+1=31k)
         let roomBase = calcRoom ? (parseInt(calcRoom.value) || 17000) : 17000;
-        let workerCount = '3';
-        if (roomBase === 21000) workerCount = '4';
-        else if (roomBase === 25000) workerCount = '5';
-        else if (roomBase === 31000) workerCount = '6';
 
         // Asansör bedeli (Her asansör +3.000 TL)
         let elevatorFee = 0;
@@ -50,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         totalNakliyatPrice.textContent = `${totalPrice.toLocaleString('tr-TR')} TL`;
 
         if (calcBreakdownNote) {
-            calcBreakdownNote.innerHTML = `<i class="fa-solid fa-users"></i> ${workerCount} Kişilik Profesyonel Ekip (Marangoz Dahil) + Kapalı Kasa Kamyon${elevatorText}`;
+            calcBreakdownNote.innerHTML = `<i class="fa-solid fa-truck"></i> Uzman Marangozlu Taşıma Kadrosu + Kapalı Çelik Kasa Kamyon${elevatorText}`;
         }
     };
 
@@ -68,11 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const elevText = calcElevator ? calcElevator.options[calcElevator.selectedIndex].text : 'Asansörsüz';
             const distText = calcDistrict ? calcDistrict.options[calcDistrict.selectedIndex].text : 'Muratpaşa';
             const finalPrice = totalNakliyatPrice ? totalNakliyatPrice.textContent : '17.000 TL';
+            const nameVal = calcName && calcName.value.trim() ? calcName.value.trim() : 'Belirtilmedi';
+            const phoneVal = calcPhone && calcPhone.value.trim() ? calcPhone.value.trim() : 'Belirtilmedi';
 
             // Ads Conversion Trigger
             window.dataLayer.push({
                 event: 'generate_lead',
                 conversion_type: 'whatsapp_nakliyat_calc',
+                customer_name: nameVal,
+                customer_phone: phoneVal,
                 package_type: roomText,
                 elevator_type: elevText,
                 estimated_value: finalPrice,
@@ -82,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fbq('track', 'Lead', { content_name: 'Nakliyat Teklifi', value: parseInt(finalPrice.replace(/\D/g, '')) || 17000, currency: 'TRY' });
             }
 
-            const message = `Merhaba, AntalyadaNakliyat.com.tr üzerinden hesapladım. Antalya evden eve nakliyat için randevu ve sözleşme detaylarını almak istiyorum:\n\n• Oda Tipi: ${roomText}\n• Asansör Durumu: ${elevText}\n• Güzergah: ${distText}\n• Hesaplanan Tutar: ${finalPrice}`;
+            let message = `Merhaba, AntalyadaNakliyat.com.tr üzerinden ulaştım. Evden eve nakliyat için sabit fiyatlı teklifinizi almak istiyorum:\n\n• Müşteri: ${nameVal}\n• Telefon: ${phoneVal}\n• Ev / Oda Tipi: ${roomText}\n• Asansör Durumu: ${elevText}\n• Güzergah: ${distText}\n• Hesaplanan Tutar: ${finalPrice}`;
             const waUrl = `https://wa.me/905070871789?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank');

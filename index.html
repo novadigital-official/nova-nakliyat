@@ -191,17 +191,17 @@
                 <div class="calc-top">
                     <span class="calc-tag">ŞEFFAF FİYAT HESAPLAYICI</span>
                     <h3>Antalya Evden Eve Fiyatı</h3>
-                    <p class="calc-sub">Sabit fiyat sözleşmesi & sigortalı nakliye</p>
+                    <p class="calc-sub">Sabit fiyat sözleşmesi &amp; sigortalı nakliye</p>
                 </div>
 
                 <form id="nakliyatForm" class="calc-form-clean">
                     <div class="field-box">
-                        <label for="calcRoom"><i class="fa-solid fa-house"></i> Ev / Oda Tipi &amp; Ekip Kapasitesi</label>
+                        <label for="calcRoom"><i class="fa-solid fa-house"></i> Ev / Oda Tipi</label>
                         <select id="calcRoom" class="select-clean">
-                            <option value="17000" data-workers="3" selected>1+1 Daire (3 Kişilik Ekip + Kamyon) — ₺17.000'den</option>
-                            <option value="21000" data-workers="4">2+1 Daire (4 Kişilik Ekip + Kamyon) — ₺21.000'den</option>
-                            <option value="25000" data-workers="5">3+1 Daire (5 Kişilik Ekip + Kamyon) — ₺25.000'den</option>
-                            <option value="31000" data-workers="6">4+1 &amp; Dubleks (6 Kişilik Ekip + Kamyon) — ₺31.000'den</option>
+                            <option value="17000" selected>1+1 Daire Taşıma — ₺17.000'den</option>
+                            <option value="21000">2+1 Daire Taşıma — ₺21.000'den</option>
+                            <option value="25000">3+1 Daire Taşıma — ₺25.000'den</option>
+                            <option value="31000">4+1 &amp; Dubleks / Villa — ₺31.000'den</option>
                         </select>
                     </div>
 
@@ -227,17 +227,28 @@
                         </select>
                     </div>
 
-                    <div class="price-output-box">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+                        <div class="field-box" style="margin-bottom: 0;">
+                            <label for="calcName"><i class="fa-solid fa-user"></i> Adınız Soyadınız</label>
+                            <input type="text" id="calcName" placeholder="Örn: Ahmet Yılmaz" style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #CBD5E1; font-size: 0.85rem; background: #F8FAFC; color: #1E293B;">
+                        </div>
+                        <div class="field-box" style="margin-bottom: 0;">
+                            <label for="calcPhone"><i class="fa-solid fa-phone"></i> Telefon / WhatsApp</label>
+                            <input type="tel" id="calcPhone" placeholder="05XX XXX XX XX" style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #CBD5E1; font-size: 0.85rem; background: #F8FAFC; color: #1E293B;">
+                        </div>
+                    </div>
+
+                    <div class="price-output-box" style="margin-top: 6px;">
                         <span class="out-title">Tahmini Nakliye Bedeli:</span>
                         <div class="out-amount" id="totalNakliyatPrice">17.000 TL</div>
                         <div id="calcBreakdownNote" style="font-size: 0.8rem; color: #CBD5E1; margin: 4px 0 6px 0; line-height: 1.4;">
-                            <i class="fa-solid fa-users"></i> 3 Kişilik Profesyonel Ekip (Marangoz Dahil) + Kapalı Kasa Kamyon
+                            <i class="fa-solid fa-truck"></i> Uzman Marangozlu Taşıma Kadrosu + Kapalı Çelik Kasa Kamyon
                         </div>
                         <span class="out-sub"><i class="fa-solid fa-circle-check"></i> Sözleşmeli Sabit Fiyat &amp; Emtia Sigortası Dahil</span>
                     </div>
 
                     <button type="button" id="btnCalculateNakliyat" class="btn btn-hero-primary btn-block">
-                        <i class="fa-brands fa-whatsapp"></i> Bu Fiyatla Randevu Oluştur
+                        <i class="fa-brands fa-whatsapp"></i> Bu Fiyatla Randevu &amp; Teklif Al
                     </button>
                 </form>
             </div>
@@ -248,7 +259,7 @@
     <section class="section visual-proof-section">
         <div class="container">
             <div class="section-title text-center">
-                <span class="section-badge">GERÇEK EKİPMAN & FİLO</span>
+                <span class="section-badge">GERÇEK EKİPMAN &amp; FİLO</span>
                 <h2>Kendi Araçlarımız ve Mobil Dış Asansörümüz</h2>
                 <p>Aracı komisyonsuz, doğrudan kendi çelik kasa araç filomuz ve 15. kat hidrolik dış asansörümüzle hizmet veriyoruz.</p>
             </div>
@@ -284,8 +295,8 @@
                         <div class="visual-overlay"></div>
                     </div>
                     <div class="visual-info">
-                        <span class="visual-tag"><i class="fa-solid fa-box-open"></i> Kraft & Balonlu Koruma</span>
-                        <h3>Özel Ambalaj & Marangozluk</h3>
+                        <span class="visual-tag"><i class="fa-solid fa-box-open"></i> Kraft &amp; Balonlu Koruma</span>
+                        <h3>Özel Ambalaj &amp; Marangozluk</h3>
                         <p>Mobilyalarınız uzman marangozlarca sökülür, çift katmanlı darbe emici patpatla sarılır ve yeni evinizde monte edilir.</p>
                     </div>
                 </div>
@@ -307,17 +318,17 @@
                 <div class="process-grid">
                     <div class="process-card">
                         <div class="process-num">01</div>
-                        <h3>Hızlı Teklif & Keşif</h3>
+                        <h3>Hızlı Teklif &amp; Keşif</h3>
                         <p>WhatsApp veya telefonla oda sayınızı ve güzergahınızı iletin, anında net ve sabit fiyat teklifi alın.</p>
                     </div>
                     <div class="process-card">
                         <div class="process-num">02</div>
-                        <h3>Paketleme & Asansörlü Yükleme</h3>
+                        <h3>Paketleme &amp; Asansörlü Yükleme</h3>
                         <p>Taşınma günü ekibimiz tüm mobilyaları söker, koruyucu malzeme ile sarar ve mobil asansörle yükler.</p>
                     </div>
                     <div class="process-card">
                         <div class="process-num">03</div>
-                        <h3>Yeni Evde Montaj & Teslim</h3>
+                        <h3>Yeni Evde Montaj &amp; Teslim</h3>
                         <p>Yeni evinizde tüm mobilyalar kurulur, beyaz eşyalar bağlanır ve %100 hasarsız teslim edilir.</p>
                     </div>
                 </div>
@@ -350,7 +361,7 @@
                         <li><i class="fa-solid fa-check"></i> 1+1 Şehir İçi Komple Ev Taşıma</li>
                         <li><i class="fa-solid fa-check"></i> Tek Taraf Asansörlü: <strong>₺20.000</strong></li>
                         <li><i class="fa-solid fa-check"></i> Çift Taraf Asansörlü: <strong>₺23.000</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Profesyonel <strong>3 Kişilik</strong> Taşıma Ekibi</li>
+                        <li><i class="fa-solid fa-check"></i> Uzman Marangozlu Profesyonel Taşıma Ekibi</li>
                         <li><i class="fa-solid fa-check"></i> Mobilya Söküm &amp; Kurulum Marangozluk</li>
                         <li><i class="fa-solid fa-check"></i> Sabit Fiyat Sözleşmesi &amp; Sigorta</li>
                     </ul>
@@ -375,7 +386,7 @@
                         <li><i class="fa-solid fa-check"></i> 2+1 Şehir İçi Komple Ev Taşıma</li>
                         <li><i class="fa-solid fa-check"></i> Tek Taraf Asansörlü: <strong>₺24.000</strong></li>
                         <li><i class="fa-solid fa-check"></i> Çift Taraf Asansörlü: <strong>₺27.000</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Profesyonel <strong>4 Kişilik</strong> Taşıma Ekibi</li>
+                        <li><i class="fa-solid fa-check"></i> Genişletilmiş Marangozlu Taşıma Ekibi</li>
                         <li><i class="fa-solid fa-check"></i> Uzman Marangoz ile Komple Demontaj/Montaj</li>
                         <li><i class="fa-solid fa-check"></i> Beyaz Eşya Tesisat Bağlantıları</li>
                     </ul>
@@ -399,7 +410,7 @@
                         <li><i class="fa-solid fa-check"></i> 3+1 Şehir İçi Komple Ev Taşıma</li>
                         <li><i class="fa-solid fa-check"></i> Tek Taraf Asansörlü: <strong>₺28.000</strong></li>
                         <li><i class="fa-solid fa-check"></i> Çift Taraf Asansörlü: <strong>₺31.000</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Profesyonel <strong>5 Kişilik</strong> Taşıma Ekibi</li>
+                        <li><i class="fa-solid fa-check"></i> Tam Kadro Profesyonel Taşıma Ekibi</li>
                         <li><i class="fa-solid fa-check"></i> Yüksek Hacimli Kapalı Çelik Kasa Kamyon</li>
                         <li><i class="fa-solid fa-check"></i> Genişletilmiş Emtia Sigortası</li>
                     </ul>
