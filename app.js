@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const calcName = document.getElementById('calcName');
     const calcPhone = document.getElementById('calcPhone');
     const totalNakliyatPrice = document.getElementById('totalNakliyatPrice');
-    const calcBreakdownNote = document.getElementById('calcBreakdownNote');
 
     const updateNakliyatPrice = () => {
         if (!totalNakliyatPrice) return;
@@ -23,14 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Asansör bedeli (Her asansör +3.000 TL)
         let elevatorFee = 0;
-        let elevatorText = '';
         const elevVal = calcElevator ? calcElevator.value : '0';
         if (elevVal === '1') {
             elevatorFee = 3000;
-            elevatorText = ' + Tek Taraf Dış Asansör';
         } else if (elevVal === '2') {
             elevatorFee = 6000;
-            elevatorText = ' + Çift Taraf Dış Asansör';
         }
 
         // İlçe mesafe farkı
@@ -46,10 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const totalPrice = roomBase + elevatorFee + districtFee;
         totalNakliyatPrice.textContent = `${totalPrice.toLocaleString('tr-TR')} TL`;
-
-        if (calcBreakdownNote) {
-            calcBreakdownNote.innerHTML = `<i class="fa-solid fa-truck"></i> Uzman Marangozlu Taşıma Kadrosu + Kapalı Çelik Kasa Kamyon${elevatorText}`;
-        }
     };
 
     if (calcRoom) calcRoom.addEventListener('change', updateNakliyatPrice);
