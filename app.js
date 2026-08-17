@@ -11,20 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const calcElevator = document.getElementById('calcElevator');
     const calcDistrict = document.getElementById('calcDistrict');
     const totalNakliyatPrice = document.getElementById('totalNakliyatPrice');
+    const calcBreakdownNote = document.getElementById('calcBreakdownNote');
 
     const updateNakliyatPrice = () => {
         if (!totalNakliyatPrice) return;
 
         // Oda baz fiyatı (Usta maliyeti + Bizim Kârımız: 1+1=17k, 2+1=21k, 3+1=25k, 4+1=31k)
         let roomBase = calcRoom ? (parseInt(calcRoom.value) || 17000) : 17000;
+        let workerCount = '3';
+        if (roomBase === 21000) workerCount = '4';
+        else if (roomBase === 25000) workerCount = '5';
+        else if (roomBase === 31000) workerCount = '6';
 
         // Asansör bedeli (Her asansör +3.000 TL)
         let elevatorFee = 0;
+        let elevatorText = '';
         const elevVal = calcElevator ? calcElevator.value : '0';
         if (elevVal === '1') {
             elevatorFee = 3000;
+            elevatorText = ' + Tek Taraf Dış Asansör';
         } else if (elevVal === '2') {
             elevatorFee = 6000;
+            elevatorText = ' + Çift Taraf Dış Asansör';
         }
 
         // İlçe mesafe farkı
@@ -40,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const totalPrice = roomBase + elevatorFee + districtFee;
         totalNakliyatPrice.textContent = `${totalPrice.toLocaleString('tr-TR')} TL`;
+
+        if (calcBreakdownNote) {
+            calcBreakdownNote.innerHTML = `<i class="fa-solid fa-users"></i> ${workerCount} Kişilik Profesyonel Ekip (Marangoz Dahil) + Kapalı Kasa Kamyon${elevatorText}`;
+        }
     };
 
     if (calcRoom) calcRoom.addEventListener('change', updateNakliyatPrice);

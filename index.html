@@ -196,12 +196,12 @@
 
                 <form id="nakliyatForm" class="calc-form-clean">
                     <div class="field-box">
-                        <label for="calcRoom"><i class="fa-solid fa-house"></i> Ev / Oda Tipi</label>
+                        <label for="calcRoom"><i class="fa-solid fa-house"></i> Ev / Oda Tipi &amp; Ekip Kapasitesi</label>
                         <select id="calcRoom" class="select-clean">
-                            <option value="17000" selected>1+1 Daire Taşıma — ₺17.000'den</option>
-                            <option value="21000">2+1 Daire Taşıma — ₺21.000'den</option>
-                            <option value="25000">3+1 Daire Taşıma — ₺25.000'den</option>
-                            <option value="31000">4+1 &amp; Dubleks / Villa — ₺31.000'den</option>
+                            <option value="17000" data-workers="3" selected>1+1 Daire (3 Kişilik Ekip + Kamyon) — ₺17.000'den</option>
+                            <option value="21000" data-workers="4">2+1 Daire (4 Kişilik Ekip + Kamyon) — ₺21.000'den</option>
+                            <option value="25000" data-workers="5">3+1 Daire (5 Kişilik Ekip + Kamyon) — ₺25.000'den</option>
+                            <option value="31000" data-workers="6">4+1 &amp; Dubleks (6 Kişilik Ekip + Kamyon) — ₺31.000'den</option>
                         </select>
                     </div>
 
@@ -230,6 +230,9 @@
                     <div class="price-output-box">
                         <span class="out-title">Tahmini Nakliye Bedeli:</span>
                         <div class="out-amount" id="totalNakliyatPrice">17.000 TL</div>
+                        <div id="calcBreakdownNote" style="font-size: 0.8rem; color: #CBD5E1; margin: 4px 0 6px 0; line-height: 1.4;">
+                            <i class="fa-solid fa-users"></i> 3 Kişilik Profesyonel Ekip (Marangoz Dahil) + Kapalı Kasa Kamyon
+                        </div>
                         <span class="out-sub"><i class="fa-solid fa-circle-check"></i> Sözleşmeli Sabit Fiyat &amp; Emtia Sigortası Dahil</span>
                     </div>
 
