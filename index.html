@@ -196,33 +196,45 @@
 
                 <form id="nakliyatForm" class="calc-form-clean">
                     <div class="field-box">
-                        <label for="calcRoom"><i class="fa-solid fa-house"></i> Taşıma Paketi Seçin</label>
+                        <label for="calcRoom"><i class="fa-solid fa-house"></i> Ev / Oda Tipi</label>
                         <select id="calcRoom" class="select-clean">
-                            <option value="1+1" data-price="15000" selected>Standart Ev Taşıma (1+1 / 2+1) — ₺15.000</option>
-                            <option value="2+1" data-price="25000">Asansörlü Premium Taşıma — ₺25.000</option>
-                            <option value="3+1" data-price="50000">Villa & Kurumsal Taşıma — ₺50.000</option>
+                            <option value="17000" selected>1+1 Daire Taşıma — ₺17.000'den</option>
+                            <option value="21000">2+1 Daire Taşıma — ₺21.000'den</option>
+                            <option value="25000">3+1 Daire Taşıma — ₺25.000'den</option>
+                            <option value="31000">4+1 &amp; Dubleks / Villa — ₺31.000'den</option>
                         </select>
                     </div>
 
                     <div class="field-box">
-                        <label for="calcDistrict"><i class="fa-solid fa-location-dot"></i> Taşınacak İlçe</label>
+                        <label for="calcElevator"><i class="fa-solid fa-elevator"></i> Dış Cephe Asansör Durumu</label>
+                        <select id="calcElevator" class="select-clean">
+                            <option value="0" selected>Asansörsüz (Zemin / Giriş Kat)</option>
+                            <option value="1">Tek Taraf Asansörlü (+₺3.000)</option>
+                            <option value="2">Çift Taraf Asansörlü (+₺6.000)</option>
+                        </select>
+                    </div>
+
+                    <div class="field-box">
+                        <label for="calcDistrict"><i class="fa-solid fa-location-dot"></i> Taşınacak İlçe / Güzergah</label>
                         <select id="calcDistrict" class="select-clean">
                             <option value="muratpasa" selected>Muratpaşa (Şehir İçi)</option>
                             <option value="kepez">Kepez (Şehir İçi)</option>
                             <option value="konyaalti">Konyaaltı (Şehir İçi)</option>
-                            <option value="dosemealti">Döşemealtı (İlçe)</option>
-                            <option value="alanya">Alanya / Manavgat / Kemer (+Şehirler Arası)</option>
+                            <option value="dosemealti">Döşemealtı (+₺1.500)</option>
+                            <option value="serik-belek">Serik / Belek (+₺2.000)</option>
+                            <option value="kemer">Kemer (+₺2.000)</option>
+                            <option value="alanya">Alanya / Manavgat / Kaş (+₺4.000)</option>
                         </select>
                     </div>
 
                     <div class="price-output-box">
                         <span class="out-title">Tahmini Nakliye Bedeli:</span>
-                        <div class="out-amount" id="totalNakliyatPrice">₺15.000</div>
-                        <span class="out-sub"><i class="fa-solid fa-circle-check"></i> Sözleşmeli Sabit Fiyat & Emtia Sigortası Dahil</span>
+                        <div class="out-amount" id="totalNakliyatPrice">17.000 TL</div>
+                        <span class="out-sub"><i class="fa-solid fa-circle-check"></i> Sözleşmeli Sabit Fiyat &amp; Emtia Sigortası Dahil</span>
                     </div>
 
                     <button type="button" id="btnCalculateNakliyat" class="btn btn-hero-primary btn-block">
-                        <i class="fa-brands fa-whatsapp"></i> Bu Paketle Teklif Oluştur
+                        <i class="fa-brands fa-whatsapp"></i> Bu Fiyatla Randevu Oluştur
                     </button>
                 </form>
             </div>
@@ -320,73 +332,76 @@
             </div>
 
             <div class="pack-grid">
-                <!-- PAKET 1: STANDART EV TAŞIMA -->
+                <!-- PAKET 1: 1+1 DAİRE TAŞIMA -->
                 <div class="pack-box">
                     <div class="pack-top">
-                        <span class="pack-category">EKONOMİK TAŞIMA</span>
-                        <h3>Standart Ev Taşıma</h3>
-                        <p>1+1 ve 2+1 daireler için güvenli, marangozlu ve temel paketleme dahil çözüm.</p>
+                        <span class="pack-category">1+1 DAİRE</span>
+                        <h3>1+1 Ev Taşıma</h3>
+                        <p>1+1 daireler için uzman marangoz, ambalaj ve sigortalı anahtar teslim taşıma.</p>
                         <div class="pack-price-wrap">
-                            <div class="pack-price">₺15.000</div>
-                            <span class="price-suffix">'den başlayan fiyatlarla</span>
+                            <div class="pack-price">₺17.000</div>
+                            <span class="price-suffix">Asansörsüz / Zemin Kat</span>
                         </div>
                     </div>
                     <ul class="pack-bullets">
-                        <li><i class="fa-solid fa-check"></i> 1+1 / 2+1 Şehir İçi Ev Taşıma</li>
+                        <li><i class="fa-solid fa-check"></i> 1+1 Şehir İçi Komple Ev Taşıma</li>
+                        <li><i class="fa-solid fa-check"></i> Tek Taraf Asansörlü: <strong>₺20.000</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Çift Taraf Asansörlü: <strong>₺23.000</strong></li>
                         <li><i class="fa-solid fa-check"></i> Profesyonel 4 Kişilik Taşıma Ekibi</li>
-                        <li><i class="fa-solid fa-check"></i> Koruyucu Balonlu Paketleme</li>
-                        <li><i class="fa-solid fa-check"></i> Mobilya Söküm & Kurulum Marangozluk</li>
-                        <li><i class="fa-solid fa-check"></i> Sabit Fiyat Sözleşmesi & Emtia Sigortası</li>
+                        <li><i class="fa-solid fa-check"></i> Mobilya Söküm &amp; Kurulum Marangozluk</li>
+                        <li><i class="fa-solid fa-check"></i> Sabit Fiyat Sözleşmesi &amp; Sigorta</li>
                     </ul>
-                    <a href="https://wa.me/905070871789?text=Merhaba,%20Standart%20Ev%20Taşıma%20(15.000%20TL'den%20başlayan)%20paketiniz%20hakkında%20fiyat%20teklifi%20almak%20istiyorum." target="_blank" class="btn btn-pack-outline btn-block">
-                        Fiyat Teklifi Al
+                    <a href="https://wa.me/905070871789?text=Merhaba,%201+1%20Ev%20Taşıma%20(17.000%20TL'den%20başlayan)%20paketiniz%20hakkında%20fiyat%20teklifi%20almak%20istiyorum." target="_blank" class="btn btn-pack-outline btn-block">
+                        Fiyatı Sabitle
                     </a>
                 </div>
 
-                <!-- PAKET 2: ASANSÖRLÜ PREMİUM TAŞIMA (POPÜLER & ELEVATED) -->
+                <!-- PAKET 2: 2+1 DAİRE TAŞIMA (POPÜLER) -->
                 <div class="pack-box popular">
-                    <div class="pop-ribbon"><i class="fa-solid fa-fire"></i> EN ÇOK TERCİH EDİLEN</div>
+                    <div class="pop-ribbon">EN ÇOK TERCİH EDİLEN</div>
                     <div class="pack-top">
-                        <span class="pack-category">SIFIR HASAR GARANTİSİ</span>
-                        <h3>Asansörlü Premium Taşıma</h3>
-                        <p>Hızlı, bina merdiveni yıpratmayan ve 15. kata kadar mobil dış asansörlü çözüm.</p>
+                        <span class="pack-category">2+1 DAİRE</span>
+                        <h3>2+1 Ev Taşıma</h3>
+                        <p>2+1 daireler için komple koruyucu ambalaj, marangoz ve asansör desteği.</p>
                         <div class="pack-price-wrap">
-                            <div class="pack-price price-amber">₺25.000</div>
-                            <span class="price-suffix">'den başlayan fiyatlarla</span>
+                            <div class="pack-price price-amber">₺21.000</div>
+                            <span class="price-suffix">Asansörsüz / Zemin Kat</span>
                         </div>
                     </div>
                     <ul class="pack-bullets">
-                        <li><i class="fa-solid fa-check"></i> 15. Kat Mobil Dış Cephe Asansörü</li>
-                        <li><i class="fa-solid fa-check"></i> Hassas & Kırılabilir Eşya Özel Koruma</li>
+                        <li><i class="fa-solid fa-check"></i> 2+1 Şehir İçi Komple Ev Taşıma</li>
+                        <li><i class="fa-solid fa-check"></i> Tek Taraf Asansörlü: <strong>₺24.000</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Çift Taraf Asansörlü: <strong>₺27.000</strong></li>
                         <li><i class="fa-solid fa-check"></i> Çift Katmanlı Darbe Emici Ambalaj</li>
                         <li><i class="fa-solid fa-check"></i> Uzman Marangoz ile Komple Demontaj/Montaj</li>
-                        <li><i class="fa-solid fa-check"></i> Kat Farkı ve Merdiven Muafiyeti</li>
+                        <li><i class="fa-solid fa-check"></i> Beyaz Eşya Tesisat Bağlantıları</li>
                     </ul>
-                    <a href="https://wa.me/905070871789?text=Merhaba,%20Asansörlü%20Premium%20Taşıma%20(25.000%20TL'den%20başlayan)%20paketiniz%20hakkında%20fiyat%20teklifi%20almak%20istiyorum." target="_blank" class="btn btn-pack-primary btn-block">
-                        <i class="fa-brands fa-whatsapp"></i> Premium Teklif Al
+                    <a href="https://wa.me/905070871789?text=Merhaba,%202+1%20Ev%20Taşıma%20(21.000%20TL'den%20başlayan)%20paketiniz%20hakkında%20fiyat%20teklifi%20almak%20istiyorum." target="_blank" class="btn btn-pack-primary btn-block">
+                        <i class="fa-brands fa-whatsapp"></i> Fiyatı Sabitle
                     </a>
                 </div>
 
-                <!-- PAKET 3: VİLLA & KURUMSAL TAŞIMA -->
+                <!-- PAKET 3: 3+1 DAİRE TAŞIMA -->
                 <div class="pack-box">
                     <div class="pack-top">
-                        <span class="pack-category">VIP LOJİSTİK</span>
-                        <h3>Villa & Kurumsal Taşıma</h3>
-                        <p>Geniş metrekareli villalar, ofisler ve değerli özel mobilyalar için VIP hizmet.</p>
+                        <span class="pack-category">3+1 &amp; BÜYÜK DAİRE</span>
+                        <h3>3+1 Ev Taşıma</h3>
+                        <p>3+1 geniş aile daireleri, dubleksler ve hacimli mobilyalar için tam kadro lojistik.</p>
                         <div class="pack-price-wrap">
-                            <div class="pack-price">₺50.000</div>
-                            <span class="price-suffix">'den başlayan fiyatlarla</span>
+                            <div class="pack-price">₺25.000</div>
+                            <span class="price-suffix">Asansörsüz / Zemin Kat</span>
                         </div>
                     </div>
                     <ul class="pack-bullets">
-                        <li><i class="fa-solid fa-check"></i> Özel Marangoz ve Paketleme Ekibi (6+ Kişi)</li>
-                        <li><i class="fa-solid fa-check"></i> Çift Araç & Geniş Hacimli Çelik Kasa Filo</li>
-                        <li><i class="fa-solid fa-check"></i> Askılı Tekstil Dolapları & Kasa Taşıma</li>
-                        <li><i class="fa-solid fa-check"></i> Yüksek Teminatlı Genişletilmiş Emtia Sigortası</li>
-                        <li><i class="fa-solid fa-check"></i> Proje Sorumlusu Eşliğinde Anahtar Teslim</li>
+                        <li><i class="fa-solid fa-check"></i> 3+1 Şehir İçi Komple Ev Taşıma</li>
+                        <li><i class="fa-solid fa-check"></i> Tek Taraf Asansörlü: <strong>₺28.000</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Çift Taraf Asansörlü: <strong>₺31.000</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Özel Marangoz ve Paketleme Ekibi (5+ Kişi)</li>
+                        <li><i class="fa-solid fa-check"></i> Yüksek Hacimli Kapalı Çelik Kasa Kamyon</li>
+                        <li><i class="fa-solid fa-check"></i> Genişletilmiş Emtia Sigortası</li>
                     </ul>
-                    <a href="https://wa.me/905070871789?text=Merhaba,%20Villa%20ve%20Kurumsal%20Taşıma%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-pack-outline btn-block">
-                        Fiyat Teklifi Al
+                    <a href="https://wa.me/905070871789?text=Merhaba,%203+1%20Ev%20Taşıma%20(25.000%20TL'den%20başlayan)%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-pack-outline btn-block">
+                        Fiyatı Sabitle
                     </a>
                 </div>
             </div>
