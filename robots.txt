@@ -1,4 +1,24 @@
 User-agent: *
 Allow: /
 
+# OAI-SearchBot: ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# GPTBot: OpenAI crawler
+User-agent: GPTBot
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# ClaudeBot: Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+# anthropic-ai
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://antalyadanakliyat.com.tr/sitemap.xml
