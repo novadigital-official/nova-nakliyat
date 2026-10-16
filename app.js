@@ -61,19 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const nameVal = calcName && calcName.value.trim() ? calcName.value.trim() : 'Belirtilmedi';
             const phoneVal = calcPhone && calcPhone.value.trim() ? calcPhone.value.trim() : 'Belirtilmedi';
 
-            // Ads Conversion Trigger
-            window.dataLayer.push({
-                event: 'generate_lead',
+            // GA4 / Google Ads lead event (no personal data is sent to analytics)
+            const leadValue = parseInt(finalPrice.replace(/\D/g, ''), 10) || 17000;
+            gtag('event', 'generate_lead', {
                 conversion_type: 'whatsapp_nakliyat_calc',
-                customer_name: nameVal,
-                customer_phone: phoneVal,
                 package_type: roomText,
                 elevator_type: elevText,
-                estimated_value: finalPrice,
+                value: leadValue,
                 currency: 'TRY'
             });
             if (typeof fbq === 'function') {
-                fbq('track', 'Lead', { content_name: 'Nakliyat Teklifi', value: parseInt(finalPrice.replace(/\D/g, '')) || 17000, currency: 'TRY' });
+                fbq('track', 'Lead', { content_name: 'Nakliyat Teklifi', value: leadValue, currency: 'TRY' });
             }
 
             let message = `Merhaba, AntalyadaNakliyat.com.tr üzerinden ulaştım. Evden eve nakliyat için sabit fiyatlı teklifinizi almak istiyorum:\n\n• Müşteri: ${nameVal}\n• Telefon: ${phoneVal}\n• Ev / Oda Tipi: ${roomText}\n• Asansör Durumu: ${elevText}\n• Güzergah: ${distText}\n• Hesaplanan Tutar: ${finalPrice}`;
@@ -83,18 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Phone Click Conversion Tracking
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-        link.addEventListener('click', function() {
-            window.dataLayer.push({
-                event: 'contact_phone_click',
-                phone_number: '05070871789',
-                lead_category: 'Nakliyat Telefon'
-            });
-            if (typeof fbq === 'function') {
-                fbq('track', 'Contact', { content_name: 'Phone Call' });
-            }
+    // Phone and WhatsApp link click tracking (event delegation covers all links on the page)
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest && event.target.closest('a[href^="tel:"], a[href*="wa.me/"]');
+        if (!link) return;
+
+        const isPhone = link.getAttribute('href').startsWith('tel:');
+        gtag('event', isPhone ? 'contact_phone_click' : 'contact_whatsapp_click', {
+            lead_category: isPhone ? 'Nakliyat Telefon' : 'Nakliyat WhatsApp',
+            page_path: window.location.pathname,
+            transport_type: 'beacon'
         });
+        if (typeof fbq === 'function') {
+            fbq('track', 'Contact', { content_name: isPhone ? 'Phone Call' : 'WhatsApp' });
+        }
     });
 
 });
